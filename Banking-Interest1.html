@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Compound Interest</title>
+    <script>
+        /* Consider the following problem statement:
+        A person invests $1000.00 in a savings account 
+        yielding 5 percent fixed annual interest. Assuming that all 
+        interest is left on deposit in the account, 
+        calculate and print the amount of money in the 
+        account at the end of each year for 10 years. 
+        Use the following formula for determining 
+        these amounts:
+        
+            a = p (1 + r)^n
+        
+        Where
+            p is the present amount invested (i.e., the principal)
+            r is the annual rate,
+            n is the number of years, and
+            a is the amount (future value) on deposit at the end of the nth year         
+            */
+        // we know: principle: $1000.00, rate = 5%, and number of year: 10  
+        // we need to caculate the Future amount of investement
+
+        // decalre variables
+        let principal; // present amount to be invested
+        const INTEREST_RATE = 0.05; // annual interest rate
+        const NUMBER_OF_YEARS = 10;
+
+        let amount; // Future amount of investement
+
+        // initialize varaibles
+        principal = 1000.00;
+
+         // processing and output
+         // for (let initial_value; condition; increment) {} 
+         for (let year = 1; year <= NUMBER_OF_YEARS; year++) {
+             // using the Math.pow() method
+             amount = principal * Math.pow( (1.0 + INTEREST_RATE), year);
+             document.writeln(year + ' -----> ' + amount.toFixed(2) );
+             document.writeln('<br />');
+         } // end of for loop
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

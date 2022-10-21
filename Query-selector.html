@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-query-selector.html</title>
+</head>
+
+<body>
+    <div id="targetDiv">
+
+        <h2>A h2 element</h2>
+        <h1>A h1 element</h1>
+        <h3>A h3 element</h3>           
+        <h2>A h2 element</h2>
+        <h4>A h4 element</h4>
+    </div>
+
+
+    <script>
+        /*if the <h3> element was placed before the <h2> element in <div>. The <h3> element is the one that will get the red background color.
+            */
+        function startup() {
+            let selector = document.getElementById("targetDiv");
+            selector.querySelector('h1, h2, h3').style.backgroundColor = "red";
+        } // end function startup
+        window.addEventListener('load', startup);
+    </script>
+</body>
+
+</html>

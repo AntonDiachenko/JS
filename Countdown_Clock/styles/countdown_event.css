@@ -1,0 +1,160 @@
+﻿@charset "utf-8";
+/* New Year Clock CSS Document */
+/* Script Date: May 05, 2022 */
+/* Developed by: Your name */
+
+body {
+	background-color: #F7F0E0;
+}
+
+
+#clock {
+    position: absolute; 
+    top: 5px; 
+    left: 5px; 
+    width: 155px; 
+    height: 180px;
+    background-color: #3299FE; 
+    border: 3px inset #fff; 
+    text-align: center;
+    color: #F7F0E0; 
+    font-weight: bold; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#clock h4, #countdown h4 {
+    text-align: center; 
+    margin-top: 0;
+    margin-bottom: 0; 
+    letter-spacing: 4px; 
+    font-variant: small-caps;
+    color: #ff0; 
+    background-color: black; 
+    width: 100%; 
+}
+
+#clock p, #countdown p {
+    color: #F7F0E0; 
+    font-weight: bold; 
+    letter-spacing: 1.5px; 
+    margin-top: 2px;
+}
+
+
+#clock img {
+    margin: 2px;
+}
+
+
+#clock input {
+    font-size: 12pt; 
+    text-align: center; 
+    background-color: #F7F0E0; 
+    color: #3299FE;
+    font-weight: bold;
+}
+
+#logo {
+    position: absolute; 
+    top: 5px; 
+    left: 165px; 
+    width: 390px; 
+    height: 180px;
+}
+
+
+#countdown {
+    position: absolute; 
+    top: 5px; 
+    left: 560px; 
+    width: 155px; 
+    height: 180px;
+    background-color: #3299FE; 
+    border: 3px inset #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#countdown input {
+    font-size: 12pt; 
+    text-align: right; 
+    background-color: #F7F0E0; 
+    color: #3299FE; 
+    font-weight: bold; 
+    margin: 2px;
+}
+
+#links {
+    position: absolute; 
+    top: 195px; 
+    left: 5px; 
+    width: 170px;
+}
+
+#links a {
+    display: block; 
+    width: 130px; 
+    background-color: #F7F0E0; 
+    color: #3299FE; 
+    font-size: 9pt;
+    margin: 3px 0 3px 0; 
+    text-decoration: none; 
+    padding: 5px; 
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px solid #F7F0EE;
+}
+
+#links a:hover {
+    color: #3299FE; 
+    border: 3px inset #fff;
+}
+
+#main {
+    position: absolute; 
+    top: 195px; 
+    left: 160px; 
+    width: 560px}
+#main img {float: right;
+}
+
+#content:first-line {
+    font-variant: small-caps;
+}
+
+#content:first-letter {
+    float: left; 
+    font-size: 350%; 
+    line-height: 0.8; 
+    margin-right: 2px; 
+    color: #3299FE;
+}
+
+#main address {
+    font-size: 8pt; 
+    color: #3299FE; 
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif; 
+    border-top: 1px solid #3299EE;
+    font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

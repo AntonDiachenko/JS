@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-sentinelr-controlled-structure</title>
+    <script>
+        /* calculate a class average of number of students */
+        // 1. Declaration Phase
+        let total;  // sum of grades
+        let gradeCounter;   // number of grades entered
+        let grade;  // grade entered by a user (as a string)
+        let gradeValue; // grade value converted to numerical
+        let average; // average of all grades
+
+        // 2. Initialization Phase
+        total = 0; // clear total
+        gradeCounter = 0;   // prepare to loop
+
+        // 3. Processing Phase
+        // prompt for input and read grade from user (possibly sentinel value -1)
+        grade = window.prompt(
+            "Enter Grade value, or -1 to Quit:", "0");
+
+        // convert grade from a String to an numerical (float)
+        gradeValue = parseFloat(grade);
+
+        // using a sentinel value
+        while (gradeValue != -1) {
+            // add gradeValue to total
+            // total = total + gradeValue
+            total += gradeValue;
+
+            // add 1 to gradeCounter 
+            gradeCounter++;
+
+            // prompt for input and read grade from user (possibly sentinel value -1)
+            grade = window.prompt(
+                "Enter Grade value, or -1 to Quit:", "0");
+
+            // convert grade from a String to an numerical (float)
+            gradeValue = window.parseFloat(grade);
+        } // end while loop
+
+        // 4. Termination Phase 
+        if (gradeCounter != 0) {
+            // calculate a class average of given number of students
+            average = total / gradeCounter;
+
+            // display average of exam grades
+            document.writeln(
+                "<h1>Class average is " + average.toFixed(2) + "</h1>");
+        } else {
+            document.writeln("<p>No grades were entered</p>");
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

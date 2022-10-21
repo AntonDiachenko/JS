@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of two numbers</title>
+    <script>
+        /* Purpose: prompt the user to enter two number and then return their sum */
+        'use strict';
+
+        /* 1. declaration phase */
+        let firstNumber;    // first string entered by user
+        let secondNumber;   // second string entered by user
+
+        let number1;        // converted first string
+        let number2;        // converted second string
+
+        let sum;            // sum of number1 and number2
+        let result;         // output the result
+
+        /* 2. Initialization Phase */
+
+        // read the first number from a user as a string
+        // ensure that the value is numerical
+        while (isNaN(firstNumber = window.prompt('Please enter first number', '0'))) 
+        {
+            window.alert('You have entered ' +
+            firstNumber + '. Please try again to enter a number.');
+
+        }     
+        
+        // read the second number from a user as a string
+        // ensure that the value is numerical
+        while (isNaN(secondNumber = window.prompt('Please enter second number', '0'))) 
+        {
+            window.alert('You have entered ' +
+            secondNumber + '. Please try again to enter a number.');
+
+        }
+
+        /* document.write('<br />');
+           document.writeln(typeof (firstNumber));
+           document.write('<br />');  */
+
+        /* 3. Processing Phase */
+
+        // convert numbers from string to a floating number
+        // parseInt(string_to_convert) and parseFloat(string_to_convert)
+        number1 = window.parseFloat(firstNumber);
+        number2 = parseFloat(secondNumber);
+
+        // document.writeln(typeof (number1));
+
+        // add numbers to sum
+        sum = number1 + number2;
+
+        result = 'The sum of 2 numbers: ' + number1 + ' and ' + number2 + ' is ' + sum;
+
+        result = '<h2 style="color:blue">' + result + '</h2>';
+
+        // 4. Termination Phase
+        document.writeln(result); 
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

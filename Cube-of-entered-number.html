@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Cube</title>
+    <script>
+        /* create a function called calculateCube that returns the value of a number multiply by itself 3 times.  */
+
+        // create function calculateCube
+        // function function_name([argument_list]) { }
+
+        function calculateCube() {
+            let input = window.prompt('Please enter a number', '0');
+            let number = parseFloat(input);
+            document.writeln('<h3>' + getCube(number) + '</h3>');
+        } // end function calculateCube
+
+        /**
+         * calculates the cube 
+         * @param {Number}  number1
+         */
+        function getCube() {
+            // getElementById() returns the element that has attribute id with the specified value
+            let theNumber = document.getElementById('number').value;
+            let theCube = Math.pow(theNumber, 3);
+            // window.alert(theCube);
+
+            let result = document.getElementById('target-div');
+
+            result.innerHTML = '<h2>' + theCube + '</h2>';
+        } // end function getCube
+
+       // window.addEventListener('load', calculateCube, false);
+    </script>
+
+</head>
+
+<!--body onload="calculateCube();"-->
+
+<body>
+    <form id="calculate-cube" accept="#" method="get">
+        <label for="number">Enter a number</label>
+        <input type="number" id="number" size="10" />
+        <input type="button" id="btn-calculate-cube" value="Calculate Cube" onclick="getCube();" />
+    </form>
+
+    <div id="target-div">Result:</div>
+</body>
+
+</html>

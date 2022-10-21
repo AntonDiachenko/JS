@@ -1,0 +1,168 @@
+﻿@charset "utf-8";
+/* GPS Order Form CSS Document */
+/*
+
+   Filename: gpsware.css 
+   This file contains styles used in the Order Form (form1.html through form3.html files).
+   Date:   February 2020
+*/
+
+body {
+	background-image: 
+	url(../images/border.jpg); 
+	background-position:left; 
+	background-repeat: repeat-y; 
+	margin-top:0; 
+	padding-top:0;
+}
+
+#links {
+	position: absolute; 	
+    top: 5px; 
+	left: 0; 
+	width: 90px;  
+	font-family:Arial, Helvetica, sans-serif; 
+	font-size:8pt;
+}
+
+#links a {
+	color:black; 
+	text-decoration:none; 
+	display: block;
+}
+
+#links a.newgroup {
+	margin-top: 10px;
+}
+
+#links a:hover {
+	color:blue; 
+	background-color: white;
+}
+
+#main {
+	position: absolute; 
+	top: 5px; 
+	left: 120px; 
+	width: 540px;
+}
+
+#logo {
+	border-bottom: 2px solid rgb(222,179,126); 
+	margin-bottom: 0;
+}
+
+#main h1 {
+	font-family: Arial, Helvetica, sans-serif; 
+	letter-spacing: 7px;
+	margin-top: 0; 
+	margin-bottom: 0;
+}
+
+#datep {
+	text-align: right; 
+	color: #A52A2A; 
+	font-size: 8pt; 
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#datep input {
+	text-align: center;
+}
+
+table {
+	width: 520px;
+}
+
+td {
+	font-size:8pt; 
+	font-family: Arial, Helvetica, sans-serif; 
+	vertical-align: top; 
+	padding: 2px;
+}
+
+td p {
+	margin: 0;
+}
+
+.labelcell {
+	color:#A52A2A; 
+	width: 80px;
+}
+
+.labelcell2 {
+	color: #A52A2A; 
+	text-align: right; 
+	vertical-align: bottom;
+}
+
+.inputcell {
+	width: 350px;
+}
+
+.inputcell2 {
+	width: 430px;
+}
+
+.outcell {
+	text-align: right;
+}
+
+select {
+	font-size: 8pt;
+}
+
+.num {
+	text-align: right; 
+	font-size: 8pt; 
+	background-color: white;
+}
+
+.text {
+	text-align: left; 
+	font-size: 8pt; 
+	background-color: white;
+}
+
+#total {
+	background-color: #FFFFE0; /*lightyellow */
+}
+
+.fieldlabel {
+	color: #A52A2A; 
+	margin: 0 5px 0 10px;
+}
+
+textarea {
+	width: 430px; 
+	height: 100px; 
+	font-size: 8pt; 
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+legend {
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 8pt; 
+	color: blue;
+}
+
+#formbuttons {
+	text-align: center; 
+	margin-top: 5px;
+}
+
+#formbuttons input {
+	margin: 0 10px; 
+	color: white; 
+	background-color: rgb(222,179,126);
+	width: 100px; 
+	text-align: center;
+}
+
+input:focus, select:focus {
+	background-color:#FF6;
+	color:#006;
+	border:1px solid #FC3;
+	font-weight:bold;
+}

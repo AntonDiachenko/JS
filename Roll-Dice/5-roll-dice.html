@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll Dice</title>
+    <style>
+        li {
+            display: inline;
+            margin-right: 10px;
+            list-style-type: none;
+        }
+    </style>
+    <script>
+        var die1Image, die2Image, die3Image, die4Image, die5Image, die6Image;
+
+        // initialize (subscribe or register) the button listener to get the image element
+        function startup() {
+            let rollBotton = document.getElementById('btn-roll-dice');
+            rollBotton.addEventListener('click', rollDice);
+            die1Image = document.getElementById('die1');
+            die2Image = document.getElementById('die2');
+            die3Image = document.getElementById('die3');
+            die4Image = document.getElementById('die4');
+            die5Image = document.getElementById('die5');
+            die6Image = document.getElementById('die6');
+        } // end function startup
+
+        function rollDice() {
+            setImage(die1Image);
+            setImage(die2Image);
+            setImage(die3Image);
+            setImage(die4Image);
+            setImage(die5Image);
+            setImage(die6Image);
+        } // end function rollDice
+
+        // setImage function
+        function setImage(dieImage) {
+           let dieValue = Math.floor( 1 + Math.random() * 6);
+            // alert(dieValue);
+
+            // set the src, alt, and title attributes of the image object
+            dieImage.setAttribute('src', 'dice-images/die' + dieValue + '.png' );
+            dieImage.setAttribute('alt', 'Die image with face ' + dieValue);
+            dieImage.setAttribute('title', 'Die image with face ' + dieValue);
+        } // end unction setImage
+
+        window.addEventListener('load', startup);
+    </script>
+</head>
+
+<body>
+    <!-- define a button element with an id btn-roll-dice and six
+    die images -->
+    <form id="dice-image-form" accept="#">
+        <input type="button" id="btn-roll-dice" value="Roll Dice" />
+        <ul>
+            <li>
+                <img id="die1" src="dice-images/blank.png" alt="Blank Image" title="Blank Image" />
+            </li>
+            <li>
+                <img id="die2" src="dice-images/blank.png" alt="Blank Image" title="Blank Image" />
+            </li>
+            <li>
+                <img id="die3" src="dice-images/blank.png" alt="Blank Image" title="Blank Image" />
+            </li>
+            <li>
+                <img id="die4" src="dice-images/blank.png" alt="Blank Image" title="Blank Image" />
+            </li>
+            <li>
+                <img id="die5" src="dice-images/blank.png" alt="Blank Image" title="Blank Image" />
+            </li>
+            <li>
+                <img id="die6" src="dice-images/blank.png" alt="Blank Image" title="Blank Image" />
+            </li>
+        </ul>
+    </form>
+</body>
+
+</html>

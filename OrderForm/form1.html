@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!--
+
+
+       GPS-ware Form 1
+       Author:
+       Date:   May 2022
+	   
+
+       Filename:         form1.html
+       Supporting files: gpsware.css, gpsware.jpg, functions.js
+
+    -->
+    <title>Product Order Form 1</title>
+    <link type="text/css" rel="stylesheet" href="styles/gpsware.css" />
+    <script src="scripts/gpsware.js"></script>
+    <script>
+        //create startup() function
+        // call the startup function that displays the current date
+        // SYNTAX: object_name.addEventListener('event_name', js_code, [capture=false])
+        window.addEventListener('load', startup);
+
+    </script>
+</head>
+
+<!-- body onload="startup();" -->
+
+<body>
+    <form name="form1" id="form1" method="post" action="form2.html" onreset="location.reload();" onsubmit="return validateForm();">
+
+        <div id="links">
+            <a href="#" class="newgroup">Home Page</a>
+            <a href="#">Product Catalog</a>
+            <a href="#">Order Form</a>
+            <a href="#">Maps Online</a>
+            <a href="#">Contact Us</a>
+            <a href="#" class="newgroup">Countries</a>
+            <a href="#">States</a>
+            <a href="#">National Parks</a>
+            <a href="#">Hiking Trails</a>
+            <a href="#">Cities</a>
+            <a href="#">Astronomical</a>
+            <a href="#">Natural</a>
+            <a href="#" class="newgroup">GoMap 1.0</a>
+            <a href="#">Drive Planner 2.0</a>
+            <a href="#">Hiker 1.0</a>
+            <a href="#">G-Receiver I</a>
+            <a href="#">G-Receiver II</a>
+            <a href="#">G-Receiver III</a>
+            <a href="#" class="newgroup">Downloads</a>
+            <a href="#">Tech Support</a>
+            <a href="#">FAQs</a>
+        </div>
+
+        <div id="main">
+            <p id="logo"><img src="images/gpsware.jpg" alt="GPS-ware" /></p>
+            <h1>Order Form</h1>
+            <p id="datep">
+                <input class="text" id="txtDateNow" name="txtDateNow" size="11" value="mm/dd/yyyy"
+                    readonly="readonly" />
+            </p>
+            <fieldset>
+                <legend>Select a Product</legend>
+
+                <table>
+                    <tr>
+                        <td class="labelcell">Product</td>
+                        <td class="inputcell">
+                            <select name="ddlProduct" id="ddlProduct" onchange="calculatePrice();">
+                                <option value="0">Products from GPS-ware</option>
+                                <option value="19.95">GoMap 1.0 ($19.95)</option>
+                                <option value="29.95">Drive Planner 2.0 ($29.95)</option>
+                                <option value="29.95">Hiker 1.0 ($29.95)</option>
+                                <option value="149.50">G-Receiver I ($149.50)</option>
+                                <option value="199.50">G-Receiver II ($199.50)</option>
+                                <option value="249.50">G-Receiver III ($249.50)</option>
+                            </select>
+
+                            <select name="ddlQuantity" id="ddlQuantity" onchange="calculatePrice();">
+                                <option value="0">Quantity</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </td>
+                        <td class="outcell">
+                            <input class="num" name="txtPrice" id="txtPrice" size="7" value="0.00"
+                                readonly="readonly" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="labelcell">Shipping</td>
+                        <td>
+                            <p>
+                                <input type="radio" name="optShipType" id="ship1" value="4.95" onclick="calculateShipping(this);"
+                                     />
+                                <label for="ship1">Standard (4-6 business days): $4.95</label>
+                            </p>
+                            <p>
+                                <input type="radio" name="optShipType" id="ship2" value="8.95" onclick="calculateShipping(this);"
+                                     />
+                                <label for="ship2">Express (2 days): $8.95</label>
+                            </p>
+                            <p>
+                                <input type="radio" name="optShipType" id="ship3" value="12.95" onclick="calculateShipping(this);"
+                                    />
+                                <label for="ship3">Next Day (1 day): $12.95</label>
+                            </p>
+                        </td>
+                        <td class="outcell">
+                            <input class="num" name="txtShipPrice" id="txtShipPrice" size="7" value="0.00"
+                                readonly="readonly" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="labelcell2">Subtotal</td>
+                        <td class="outcell">
+                            <input class="num" name="txtSubtotal" id="txtSubtotal" size="7" value="0.00"
+                                readonly="readonly" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="labelcell2">Tax (5%)</td>
+                        <td class="outcell">
+                            <input class="num" name="txtTax" id="txtTax" size="7" value="0.00" readonly="readonly" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="labelcell2">TOTAL</td>
+                        <td class="outcell">
+                            <input class="num" name="txtGrandTotal" id="txtGrandTotal" size="7" value="0.00"
+                                readonly="readonly" />
+                        </td>
+                    </tr>
+                </table>
+
+            </fieldset>
+
+            <p id="formbuttons">
+                <input type="reset" name="btnCancel" id="btnCancel" value="Cancel" />
+                <input type="submit" name="btnNext" id="btnNext" value="Next" />
+            </p>
+        </div>
+
+    </form>
+</body>
+
+</html>

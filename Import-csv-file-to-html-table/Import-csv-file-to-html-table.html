@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Import CSV File to HTML Table using JavaScript</title>
+    <script type="text/javascript">
+        /**
+         * How to import CSV File to HTML Table using JavaScript and HTML5 File API.
+         * First the CSV File i.e. Comma separated Text file, will be read using 
+         * HTML5 FileReader API as String.
+         * Then the String will be parsed into Rows and Columns and will be displayed in HTML Table.
+         */
+
+        /**
+         * The HTML Markup consists of a FileUpload control (HTML File Input) and a HTML Button i.e. Upload.
+         * When the Button is clicked, the Upload JavaScript function is called.
+         * Inside the function, first a check is performed to verify whether the file is a valid CSV or a text file. Then a check is performed to make sure whether the browser supports HTML5 File API.
+         * Once the above checks are cleared then the contents of the CSV file are read as text string and 
+         * then the string is split into parts using comma and new line characters and finally is displayed 
+         * as an HTML Table.
+         * */
+    function Upload() {
+        var fileUpload = document.getElementById("fileUpload");
+        var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
+        if (regex.test(fileUpload.value.toLowerCase())) {
+            if (typeof (FileReader) != "undefined") {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var table = document.createElement("table");
+                    var rows = e.target.result.split("\n");
+                    for (var i = 0; i < rows.length; i++) {
+                        var cells = rows[i].split(",");
+                        if (cells.length > 1) {
+                            var row = table.insertRow(-1);
+                            for (var j = 0; j < cells.length; j++) {
+                                var cell = row.insertCell(-1);
+                                cell.innerHTML = cells[j];
+                            }
+                        }
+                    }
+                    var dvCSV = document.getElementById("dvCSV");
+                    dvCSV.innerHTML = "";
+                    dvCSV.appendChild(table);
+                }
+                reader.readAsText(fileUpload.files[0]);
+            } else {
+                alert("This browser does not support HTML5.");
+            }
+        } else {
+            alert("Please upload a valid CSV file.");
+        }
+    }
+    </script>
+
+</head>
+<body>
+    <input type="file" id="fileUpload" value="Upload CSV file   " />
+    <input type="button" id="upload" value="Upload" onclick="Upload()" />
+    <hr />
+    <div id="dvCSV">
+    </div>
+</body>
+</html>

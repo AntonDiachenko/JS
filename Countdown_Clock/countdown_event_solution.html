@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Dixon's New Year's Bash</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--Link to an external style countdown_event.css -->
+    <link type="text/css" rel="stylesheet" href="styles/countdown_event.css" />
+    <!-- link to an external script countdown_event.js -->
+    <script src="scripts/countdown_event.js"></script>
+    <script>
+        window.addEventListener('load', setInterval('eventClock()', 1000));
+    </script>
+</head>
+
+<!-- body onload="window.setInterval('eventClock()', 1000);" -->
+<body>
+    <div id="container">
+
+        <form id="clockform" name="clockform" action="#">
+
+            <div id="clock">
+                <h4>Time</h4>
+                <p>
+                    <input type="text" size="12" id="txtDateNow" name="txtDateNow" /><br />
+                    <img src="images/clock.jpg" alt="" /><br />
+                    <input type="text" size="12" id="txtTimeNow" name="txtTimeNow" />
+                </p>
+            </div>
+
+            <div id="logo">
+                <img src="images/logo.jpg" alt="New Years Bash" />
+            </div>
+
+            <div id="countdown">
+                <h4>Countdown</h4>
+                <p>
+                    <input type="text" size="3" id="txtDaysLeft" name="txtDaysLeft" /> Days<br />
+                    <input type="text" size="3" id="txtHrLeft" name="txtHrLeft" /> Hours<br />
+                    <input type="text" size="3" id="txtMinLeft" name="txtMinLeft" /> Minutes<br />
+                    <input type="text" size="3" id="txtSecLeft" name="txtSecLeft" />Seconds
+                </p>
+            </div>
+
+            <div id="links">
+                <a href="#">FrostiRun</a>
+                <a href="#">Kid's Korner</a>
+                <a href="#">Chester the Jester</a>
+                <a href="#">A Taste of Dixon</a>
+                <a href="#">Winter Art Fair</a>
+                <a href="#">Lester's Blues Band</a>
+                <a href="#">The Jazz Express</a>
+                <a href="#">The Fireworks Show</a>
+                <a href="#">Final Countdown</a>
+            </div>
+
+            <div id="main">
+                <img src="images/photo.jpg" alt="" />
+                <p id="content">
+                    Dixon's New Year's Bash is back for the 22nd year of fun and excitement.
+                    The festivities start on December 31 at noon with the FrostiRun 5K and 10K races. Sign
+                    up now or the morning of the race. Family fun is available at the Kid's Korner with
+                    booths and free activities for the whole family; including performances from Dixon's
+                    own Chester the Jester. The fun continues with A Taste of Dixon as vendors provide
+                    samples from Dixon's best eateries and for the artistically inclined, plan to attend
+                    the Winter Art Fair on Dixon's downtown square.
+                </p>
+                <p>
+                    Music from Lester's Blues Band and The Jazz Express brings us into the New Year.
+                    The dancing starts at 7 p.m. and continues until midnight. From ten to 11 p.m. we say goodbye
+                    to the old year (and ring in the new) with the famous New Year's Bash fireworks spectacular.
+                    Be sure to arrive early for all of the festivities and the final countdown.
+                </p>
+                <address>
+                    New Year's Bash &#183;
+                    340 Main Street, Dixon OK 74381 &#183;
+                    555 - 3481
+                </address>
+            </div>
+        </form>
+        <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+            <div class="container">
+                <div class="navbar-text pull-left">
+                    <p>New Year's Bash · 340 Main Street, Dixon OK 74381 · 555 - 3481</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Fixed Footer -->
+<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+    <div class="container">
+        <div class="navbar-text pull-left">
+            <p>© 2017</p>
+        </div>
+        <div class="navbar-text pull-right">
+            <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+            <a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+            <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="scripts/bootstrap.min.js"></script>
+
+</body>
+</html>

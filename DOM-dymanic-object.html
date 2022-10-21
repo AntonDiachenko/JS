@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Objects</title>
+</head>
+
+<body>
+    <form id="dom-form">
+        <button type="button" onclick="addTextField();">Add a TextBox</button>
+        <br />
+        <button type="button" onclick="changeColor();">Change Color</button>
+        <br />
+        <button type="button" onclick="changeSize();">Change Font Size</button>
+        <br />
+        <button type="button" onclick="removeTextField();">Remove a TextBox</button>
+        <br />
+    </form>
+
+    <script>
+                /*
+         * JavaScript Document Object Model
+         * JavaScript was developed so that HTML pages could be interactive, meaning 
+         * that they could change as a user moved her mouse pointer and clicked the 
+         * mouse buttons and typed keys. The developers of the JavaScript language 
+         * also developed the HTML document object model (DOM). The DOM is the list 
+         * of all the objects and their attributes and methods that a programmer can 
+         * use to make an HTML document interactive.
+         */
+
+        /* The following program uses methods and attributes from the DOM to add, 
+         * change, and remove text fields when the user clicks buttons. The program 
+         * uses the createElement and appendChild methods to create text fields when a 
+         * user clicks the Add button. The example uses the getElementsByTagName method to
+         * get an array of all the text fields. It uses the size and style attributes to 
+         * change the size and color of the text fields. Finally, it uses the removeChild 
+         * method to remove a text field when the user clicks the Remove button.
+         */
+
+        /**
+         * adds a text field at the end (append) of the body element
+         */
+        function addTextField() {
+            // create a unique identifier for the new text field
+            var texts = document.getElementsByTagName('input');
+            var id = 'text' + texts.length;
+
+            // create a text field and set its id
+            var text = document.createElement('input');
+            text.type = 'text';
+            text.id = id;
+
+            // createa div and add the text field to the div
+            var div = document.createElement('div');
+
+            // append the text field to the div element
+            div.appendChild(text);
+
+            // append the div to the document body element
+            document.body.appendChild(div);
+        }  // end function addTextField
+
+
+        /**
+         * changes the font color
+         */
+        function changeColor() {
+            var colors = [
+                'black', 'gray', 'brown', 'blue', 'purple', 'red',
+                'green', 'chartreuse', 'yellow', 'orange', 'fuchsia', 'white'
+            ];
+
+            // get the array of all text fields
+            var texts = document.getElementsByTagName('input');
+            if (texts.length > 0) {
+                // choose a backgrounf and foreground color 
+                let index = choose(texts);
+                let opposite = colors.length - index - 1;
+                let background = colors[index];
+                let foreground = colors[opposite];
+
+                // choose a text field
+                let text = texts[choose(texts)];
+
+                // change the element color
+                text.style.color = foreground;
+                text.style.backgroundColor = background;
+
+                // display a text inside the text field
+                text.value = foreground + ' on ' + background;
+
+
+
+                // remove the parent and the text 
+            }
+        } // end function changeColor
+
+        /**
+         * returns a radom integer in the range [0, list.length]
+         */
+        function choose(list) {
+            let index = Math.floor(Math.random() * list.length)
+            return index;
+        } // end function choose
+
+        /**
+         * changes the text field sixe
+         */
+        function changeSize() {
+            // get an array of all text fields
+            let texts = document.getElementsByTagName('input');
+            if (texts.length > 0) {
+                // get the size of the first element
+                let size = texts[0].size;
+
+                // increment the size
+                if (++size > 30) {
+                    size = 5;
+                }
+
+                // change the size of al text fields
+                for (let counter = 0; counter < texts.length; counter++) {
+                    let text = texts[counter];
+                    text.size = size;
+                }
+            }
+        } // end function changeSize
+
+        /**
+         * removes randomly a text field
+         */
+        function removeTextField() {
+            // get an array of all text fields
+            let texts = document.getElementsByTagName('input');
+            if (texts.length > 0) {
+                // choose a text field
+                let index = choose(texts);
+                let text = texts[index];
+
+                // get the text field parent
+                let div = text.parentElement;
+
+                // remove the parent and the text field 
+                document.body.removeChild(div);
+
+                // the id of the remaining text field 
+
+                for (let counter = index; counter < texts.length; counter++) {
+                    let id = 'text' + counter;
+                    texts[counter].id = id;
+                }
+            }
+        } // end function removeTextField
+    </script>
+</body>
+
+</html>

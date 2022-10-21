@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-get-element-by-tag-name.html</title>
+</head>
+
+<body>
+    <span>Below is a table</span>
+    <table>
+        <tr>
+            <td>Row 1 Cell 1</td>
+            <td>Row 1 Cell 2</td>
+        </tr>
+        <tr>
+            <td>Row 2 Cell 1</td>
+            <td>Row 2 Cell 2</td>
+        </tr>
+        <tr>
+            <td>Row 3 Cell 1</td>
+            <td>Row 3 Cell 2</td>
+        </tr>
+        <tr>
+            <td>Row 4 Cell 1</td>
+            <td>Row 4 Cell 2</td>
+        </tr>
+    </table>
+    <script>
+        function startup() {
+            let colors = [
+                'black', 'gray', 'brown', 'blue',
+                'purple', 'red', 'green', 'yellow',
+                'white', 'navy'];
+
+                let tdElements = document.getElementsByTagName('td');
+                let length = tdElements.length;
+                for (let element = 0; element < length; element++) {
+                    tdElements[element].style.color = colors[element];
+                }
+
+        } // end function startup
+        window.addEventListener('load', startup);
+    </script>
+</body>
+
+</html>

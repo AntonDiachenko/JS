@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-continue-statement</title>
+    <script>
+        // Counter-controlled repetition with the for statement.
+        // Initialization, repetition condition and 
+      // incrementing are all included in the for 
+      // statement header. 
+      for (let counter = 1; counter <= 10; counter++) {
+        // when the counter value equals 5, then skip this iteration and continue
+        
+        if (counter == 5) {
+            continue;
+        }
+        let result = '<p style=\'font-size: ' +
+                counter + 'rem\'>HTML Font Size: ' + counter +
+                'rem</p>';
+            document.writeln(result);
+      }
+
+      </script>
+</head>
+<body>
+    
+</body>
+</html>

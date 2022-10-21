@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Event</title>
+</head>
+<body>
+<h2 id="my-heading-2">Hello!</h2>    
+<form id="hello-form" action="#" method="post">
+    <input type="button" value="Say Hello" onclick="sayHello();" />
+</form>
+
+<script>
+    function sayHello() {
+        document.getElementById('my-heading-2').innerHTML = 
+        'Hello again!';
+    }
+</script>
+</body>
+</html>
