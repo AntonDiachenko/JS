@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Objects Array</title>
+    
+    <script>
+
+//------There are no in-built functions for finding max and min value in array
+
+        const cars = [
+            {type:"Volvo", year:2016},
+            {type:"Saab", year:2001},
+            {type:"BMW", year:2010}
+        ];
+        cars.sort(function(a, b) {return a.year - b.year});
+        var years = cars.map(function(item) {
+            document.writeln(item.year, item.type);
+        });
+        /*
+        cars.forEach(element => {
+            document.writeln(element.year);
+            document.writeln(element.type);
+        });
+        */
+        
+        
+
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

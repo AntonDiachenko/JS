@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove duplicates</title>
+    
+    <script>
+        
+// --------OPTION 1 - Remove duplicates from an array using a Set (collection of UNIQUE values)
+       // let chars = ['A', 'B', 'A', 'C', 'B'];
+        let chars = [1, 6, 14, 6, 3, 8, 4, 3, 11];
+        let uniqueChars = [...new Set(chars)];
+
+
+        document.writeln(uniqueChars);
+        // or
+       // console.log(uniqueChars);
+
+// --------OPTION 2 - Remove duplicates from an array using indexOf() and filter() methods (collection of UNIQUE values)
+        let chars2 = ['A', 'B', 'A', 'C', 'B'];
+
+        chars2.forEach((c, index) => {
+            console.log(`${c} - ${index} - ${chars2.indexOf}`);
+        });
+
+        let uniqueChars2 = chars2.filter((c, index) => {
+            return chars2.indexOf(c) === index;
+        });
+        document.writeln(uniqueChars2);
+        // To find the duplicate values, you need to reverse the condition:
+        /*
+        let uniqueChars2 = chars2.filter((c, index) => {
+            return chars2.indexOf(c) !== index;
+        });
+        document.writeln(uniqueChars2);
+        */
+
+//----------OPTION 3 - Remove duplicates from an array using forEach() and include()
+        let chars3 = [1, 6, 14, 6, 3, 8, 4, 3, 11];
+
+        let uniqueChars3 = [];
+        chars3.forEach((c) => {
+            if(!uniqueChars3.includes(c)) {
+                uniqueChars3.push(c);
+            }
+        });
+        document.writeln(uniqueChars3);
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
